@@ -309,11 +309,7 @@ class HealthConditionDetector:
         cv2.destroyAllWindows()
         return self.seizure_detected or self.fall_detected or chest_pain_detected
 
-if __name__ == "__main__":
-    video_path = r"C:\Users\VINITH J R\OneDrive\Desktop\doctor\falling.mp4"  # Replace with your actual video path
-    detector = HealthConditionDetector(fall_threshold=0.03, chest_min_detection_seconds=0.25)
-    result = detector.process_video(video_path)
-    print(result)
+
     
 from flask import Flask, request, jsonify
 import threading
@@ -321,7 +317,9 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+print("Loading AI models...")
 detector = HealthConditionDetector()
+print("AI models loaded.")
 
 @app.route('/run_detection', methods=['POST'])
 def run_detection():
@@ -343,4 +341,4 @@ def run_detection():
     return jsonify({'result': result})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="127.0.0.1", port=5001, debug=True)
