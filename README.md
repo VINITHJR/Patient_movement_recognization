@@ -115,6 +115,36 @@ doctor/
 
 ## Installation
 
+## Python Version
+
+This project was developed and tested using:
+
+```text
+Python 3.12.3
+```
+
+### Recommended Version
+
+```text
+Python 3.11.x or Python 3.12.x
+```
+
+### Important
+
+MediaPipe compatibility issues may occur with newer Python versions.
+
+For best results, use:
+
+```text
+Python 3.12.3
+```
+
+Check your Python version:
+
+```bash
+python --version
+```
+
 ### Clone Repository
 
 ```bash
