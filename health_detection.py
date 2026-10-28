@@ -5,7 +5,6 @@ import math
 from collections import deque
 import time
 
-
 class HealthConditionDetector:
     def __init__(self, seizure_motion_threshold=0.03, seizure_history_length=10, seizure_duration=2.0,
                  chest_history_length=15, chest_proximity_threshold=0.35, head_movement_threshold=0.02,
